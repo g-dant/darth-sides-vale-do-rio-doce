@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/navbar.css">
+        <link rel="stylesheet" href="assets/iframe.css">
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div class="topnav">
+                <a :class="{ active: part == 'A' }" @click="part = 'A'">A. Introdução</a>
+                <a :class="{ active: part == 'B' }" @click="part = 'B'">B. Análise de Dados</a>
+                <a :class="{ active: part == 'C' }" @click="part = 'C'">C. Interpretação</a>
+                <a :class="{ active: part == 'D' }" @CLICK="part = 'D'">D. Modelagem</a>
+            </div> 
+            <div class="resizer-block">
+                <div class="resizer">
+                    <iframe :src="`notebooks-html/ProjetoFinalFGV-Waysides-Parte_${part}.html`"
+                        class="resized">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <script src="assets/index.js"></script>
+    </body>
+</html>
